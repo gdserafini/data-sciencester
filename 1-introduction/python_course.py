@@ -44,3 +44,43 @@ print(f'f-string: {1}, {2}, {3}')
 #    print(0/0)
 #except Exception as ex:
 #    raise ex
+
+list1 = [1,2,3,'4',[5]]
+list2 = list()
+
+print(list1[-1]) #last element
+list1[0] = 'one'
+print(list1[0])
+print(list1[0:3]) #elements - index 0,1,2 -> 3 - not inclued 
+print(list1[::2])
+print(2 in list1)
+list2.append(10)
+list2.append(20)
+print(list2)
+list3 = list1 + list2
+print(list3, list1)
+list1.extend(list2)
+print(list1)
+x, y = list2
+print(x, y)
+_, y = list2
+print(_, y)
+list4 = [_ for _ in range(100)]
+print(len(list4))
+
+tuple1 = (1,2,3)
+try:
+    tuple1[0] = tuple1[0] * 10
+except:
+    print('Cannot change a tuple value.')
+
+def sum_and_product(x: int, y: int) -> int:
+    return x + y, x * y #returns as a tuple
+s, p = sum_and_product(3, 4)
+
+print(sum_and_product(1,2))
+print(s, p)
+
+a1, b1 = 1, 2
+a1, b1 = b1, a1
+print(a1, b1)
