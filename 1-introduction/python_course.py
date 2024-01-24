@@ -84,3 +84,44 @@ print(s, p)
 a1, b1 = 1, 2
 a1, b1 = b1, a1
 print(a1, b1)
+
+grades_dict = {'joel': 80, 'tim': 90}
+print(grades_dict['joel'], 'joel' in grades_dict)
+print(grades_dict.get('sdfsdfsdf'))
+grades_dict['kate'] = 99
+print(grades_dict['kate'])
+print(grades_dict.keys(), grades_dict.values(), grades_dict.items())
+grades_dict[('hashalbe', 'key')] = 100
+grades_dict['hashablekey2'] = 100
+print(grades_dict)
+
+words = ['aaaa', 'bbbb', 'cccc', 'aaaa', 'aaaa', 'cccc']
+words_count = {}
+for word in words:
+    if word in words_count:
+        words_count[word] += 1
+    else:
+        words_count[word] = 1
+print(words_count)
+
+from collections import defaultdict
+
+word_counts2 = defaultdict(int) #atribui 0 a valor das novas chaves - int()
+for word in words:
+    word_counts2[word] += 1 #incrementa o novo valor da chave criada como 0
+print(word_counts2.items())
+
+from collections import Counter
+
+word_counts3 = Counter(words)
+print(word_counts3)
+
+for word, count in word_counts3.most_common(1): # top 1 com maior contagem
+    print(word, count)
+
+set1 = {1,2,3}
+empty_set = set() #{} é um dict vazio
+empty_set.add(1)
+print(set1, empty_set)
+words_set = set(words)
+print('aaaa' in words_set) #mt mais rápido do que procurar em uma lista
